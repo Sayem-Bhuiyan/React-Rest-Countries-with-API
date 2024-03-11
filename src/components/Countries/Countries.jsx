@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import PropTypes from 'prop-types'
 import Country from "../Country/Country";
+import './Countries.css'
 
 const Countries = () => {
     const [countries, setCountries] = useState([])
@@ -15,9 +15,17 @@ const Countries = () => {
     return (
         <div>
             <h3>Countries: {countries.length}</h3>
-            {
-                countries.map((country) => <Country key={country.cca3} country={country} />)
-            }
+            <div>
+                <h4>Visited Countries</h4>
+                <ul>
+                    
+                </ul>
+            </div>
+            <div className="country-container">
+                {
+                    countries.map((country) => <Country key={country.cca3} country={country} />)
+                }
+            </div>
         </div>
     );
 };
